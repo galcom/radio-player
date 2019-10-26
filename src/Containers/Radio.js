@@ -34,13 +34,9 @@ class Radio extends React.Component {
     constructor(props) {
         super(props);
 
-        const play = "&#9654;"
-        const pause = "&#9208;"
-        const loading = ""
-
         this.state = {
             playing: true,
-            playbackIcon: loading,
+            playControlImage: "Load",
             streamUrl: this.streamUrl,
             logo: this.logo
         };
@@ -51,14 +47,14 @@ class Radio extends React.Component {
     }
 
     onStartPlaying() {
-        this.setState({ playbackIcon: this.pause })
+        this.setState({ playControlImage: "Pause" })
     }
 
     togglePlaying() {
         if (this.state.playing) {
-            this.setState({ playing: false, playbackIcon: this.play })
+            this.setState({ playing: false, playControlImage: "Play" })
         } else {
-            this.setState({ playing: true, playbackIcon: this.pause })
+            this.setState({ playing: true, playControlImage: "Pause" })
         }
     }
 
@@ -69,6 +65,7 @@ class Radio extends React.Component {
                 togglePlaying={this.togglePlaying}
                 onStartPlaying={this.onStartPlaying}
                 streamUrl={this.state.streamUrl}
+                playControlImage={this.state.playControlImage}
             />
         )
     }

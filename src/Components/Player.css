@@ -1,0 +1,27 @@
+  .app {
+    background: #1c2228;
+    border-style: solid;
+    border-color: red;
+}
+
+.radiocol {
+    border-style: solid;
+    border-color: green;
+}
+
+.controlrow {
+    border-style: solid;
+    border-color: purple;
+    padding: 10%;
+}
+
+.logorow {
+    border-style: solid;
+    border-color: purple;
+    padding: 10%;
+}
+
+.fitimage {
+    width: 100%;
+    object-fit: cover;
+}
