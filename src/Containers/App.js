@@ -6,8 +6,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+    const play = "&#9654;"
+    const pause = "&#9208;"
+
     this.state = {
-      playing: true
+      playing: true,
+      playbackIcon: play
     };
 
     this.togglePlaying = this.togglePlaying.bind(this);
@@ -15,9 +19,9 @@ class App extends React.Component {
 
   togglePlaying() {
     if (this.state.playing) {
-      this.setState({ playing: false })
+      this.setState({ playing: false, playbackIcon: this.pause })
     } else {
-      this.setState({ playing: true })
+      this.setState({ playing: true, playbackIcon: this.play })
     }
   }
 
