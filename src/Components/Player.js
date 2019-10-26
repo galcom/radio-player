@@ -8,23 +8,27 @@ class Player extends React.Component {
         return (
             <div id="wrapper">
                 <div id="top">
-                  <img src='FaithTechRadio.png' alt="logo" id="logo" />
+                  <img
+                    src='FaithTechRadio.png'
+                    alt="logo"
+                    id="logo"
+                  />
                 </div>
                 <div id="bottom">
                     <img
-                        src={this.props.playControlImage + ".gif"}
-                        alt="play/pause"
-                        onClick={() => { this.props.togglePlaying() }}
-                        className="controlButton"
+                      src={this.props.playControlImage + ".gif"}
+                      alt="play/pause"
+                      onClick={() => { this.props.togglePlaying() }}
+                      id="control"
                     />
                     <FilePlayer
                         url={this.props.streamUrl}
                         playing={this.props.playing}
                         config={{
-                            file: {
-                                forceAudio: true,
-                                autoplay: true
-                            }
+                          file: {
+                            forceAudio: true,
+                            autoplay: true
+                          }
                         }}
                         onPlay={() => { this.props.onStartPlaying() }}
                     />
