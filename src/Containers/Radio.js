@@ -36,7 +36,7 @@ class Radio extends React.Component {
 
     this.state = {
       playing: true,
-      playControlImage: "Load",
+      playControlImage: "Play",
       streamUrl: this.streamUrl,
       logo: this.logo
     };
