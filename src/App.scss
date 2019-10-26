@@ -23,11 +23,6 @@
   border-color: purple;
 }
 
-.App-link {
-  color: #09d3ac;
-  border-style: solid;
-  border-color: red;
-}
 
 .button {
   border: 0;
@@ -35,10 +30,10 @@
   box-sizing: border-box;
   width: 0;
   height: 74px;
-
   border-color: transparent transparent transparent #202020;
   transition: 100ms all ease;
   cursor: pointer;
+
 
   /* play state */
   border-style: solid;
