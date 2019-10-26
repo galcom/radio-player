@@ -3,32 +3,23 @@ import Player from '../Components/Player'
 import queryString from 'query-string'
 const isReachable = require('is-reachable');
 
-function availabilityCheck() {
-  isReachable('https://google.com:443')
-    .then(internetStatus => {
-      if (internetStatus) {
-        console.log("Internet Is Accessible")
-        isReachable('https://google.com:443')
-          .then(streamStatus => {
-            if (streamStatus) {
-              console.log("Stream is Available")
-            } else {
-              console.log("Stream is Broken")
-            }
-          })
-          .catch(error => console.log('Failed to test stream. Error: ' + error))
-      } else {
-        console.log("Internet Is Not Accessible")
-      }
-    })
-    .catch(error => console.log('Failed to test google. Error: ' + error))
+function availabilityCheck(url) {
+  isReachable('https://google.com')
+  .then(internetStatus => {
+    console.log("Internet Is Accessible")
+    if (internetStatus){
+    } else {
+      console.log("Internet Is Not Accessible")
+    }
+  })
+  .catch(error => console.log('Failed to test google. Error: ' + error))
 }
-availabilityCheck()
 
 class Radio extends React.Component {
   componentDidMount() {
     const values = queryString.parse(this.props.location.search)
     this.setState({ streamUrl: values.streamUrl, logo: values.logo })
+    availabilityCheck(values.streamUrl)
   }
 
   constructor(props) {
@@ -53,6 +44,7 @@ class Radio extends React.Component {
   }
 
   togglePlaying() {
+    availabilityCheck(this.state.streamUrl)
     if (this.state.playing) {
       this.setState({ playing: false, playControlImage: "Play" })
     } else {
