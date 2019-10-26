@@ -1,23 +1,24 @@
 import React from 'react';
 import './Player.css';
 import FilePlayer from 'react-player/lib/players/FilePlayer'
-import { Image } from 'react-bootstrap'
+
 
 class Player extends React.Component {
     render() {
         return (
             <div id="wrapper">
-                <div id="logo"><Image src='FaithTechRadio.png' alt="logo" fluid /></div>
-                <div id="control">
-                    <Image
+                <div id="top">
+                  <img src='FaithTechRadio.png' alt="logo" id="logo" />
+                </div>
+                <div id="bottom">
+                    <img
                         src={this.props.playControlImage + ".gif"}
                         alt="play/pause"
                         onClick={() => { this.props.togglePlaying() }}
                         className="controlButton"
-                        fluid
                     />
                     <FilePlayer
-                        url={this.props.streamUrl} //http://xstreamer.galcom.org:8000/GalcomCanada
+                        url={this.props.streamUrl}
                         playing={this.props.playing}
                         config={{
                             file: {
