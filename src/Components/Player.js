@@ -6,9 +6,9 @@ class Player extends React.Component {
     render() {
         return (
             <div>
-                <input onClick={() => { this.props.togglePlaying() }} value={this.props.playbackIcon} />
+                <input onClick={() => { this.props.togglePlaying() }} value=">" />
                 <FilePlayer
-                    url='http://xstreamer.galcom.org:8000/GalcomCanada'
+                    url={this.props.streamUrl} //http://xstreamer.galcom.org:8000/GalcomCanada
                     playing={this.props.playing}
                     config={{
                         file: {
@@ -16,6 +16,7 @@ class Player extends React.Component {
                             autoplay: true
                         }
                     }}
+                    onPlay={() => { this.props.onStartPlaying() }}
                 />
             </div>
         )
