@@ -9,7 +9,7 @@ html, body, #root {
 
 }
 
-#logo, #control {
+#top, #bottom {
     position: fixed;
     left: 0;
     right: 0;
@@ -19,15 +19,15 @@ html, body, #root {
     background-color: #1c2228;
 }
 
-#logo {
+#top {
     top: 0;
 }
 
-#control {
+#bottom {
     bottom: 0;
 }
 
-.controlButton {
-    width: 10%;
-    height: 10%;
+#logo {
+    max-width: 100%;
+    max-height: 100%;
 }
