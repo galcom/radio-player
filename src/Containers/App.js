@@ -1,32 +1,13 @@
 import React from 'react';
-import Player from '../Components/Player'
-
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Radio from './Radio';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      playing: true
-    };
-
-    this.togglePlaying = this.togglePlaying.bind(this);
-  }
-
-  togglePlaying() {
-    if (this.state.playing) {
-      this.setState({ playing: false })
-    } else {
-      this.setState({ playing: true })
-    }
-  }
-
   render() {
     return (
-      <Player
-        playing={this.state.playing}
-        togglePlaying={this.togglePlaying}
-      />
+      <Router>
+        <Route path="/" component={Radio} />
+      </Router>
     )
   }
 }

@@ -5,17 +5,18 @@ import FilePlayer from 'react-player/lib/players/FilePlayer'
 class Player extends React.Component {
     render() {
         return (
-            <div class='PlayerWindow'>
+            <div>
                 <input onClick={() => { this.props.togglePlaying() }} value=">" />
                 <FilePlayer
-                    url='http://xstreamer.galcom.org:8000/GalcomCanada'
+                    url={this.props.streamUrl} //http://xstreamer.galcom.org:8000/GalcomCanada
                     playing={this.props.playing}
                     config={{
-                      file: {
-                        forceAudio: true,
-                        autoplay: true
-                      }
+                        file: {
+                            forceAudio: true,
+                            autoplay: true
+                        }
                     }}
+                    onPlay={() => { this.props.onStartPlaying() }}
                 />
             </div>
         )
