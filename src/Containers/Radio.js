@@ -4,19 +4,10 @@ import queryString from 'query-string'
 const isReachable = require('is-reachable');
 
 function availabilityCheck(url) {
-  isReachable('https://google.com:443')
+  isReachable('https://google.com')
   .then(internetStatus => {
     console.log("Internet Is Accessible")
     if (internetStatus){
-    //   isReachable(url)
-    //   .then(streamStatus => {
-    //     if (streamStatus){
-    //       console.log("Stream is Available")
-    //     } else {
-    //       console.log("Stream is Broken")
-    //     }
-    //   })
-    //   .catch(error => console.log('Failed to test stream. Error: ' + error))
     } else {
       console.log("Internet Is Not Accessible")
     }
