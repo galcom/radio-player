@@ -1,27 +1,28 @@
-  .app {
-    background: #1c2228;
-    border-style: solid;
-    border-color: red;
+html, body, #root {
+    height: 100%;
+    margin: 0;
 }
 
-.radiocol {
-    border-style: solid;
-    border-color: green;
+#wrapper {
+    min-height: 100%; 
+    background-color: blueviolet;
+
 }
 
-.controlrow {
-    border-style: solid;
-    border-color: purple;
-    padding: 10%;
+#logo, #control {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 50%;
+    text-align: center;
 }
 
-.logorow {
-    border-style: solid;
-    border-color: purple;
-    padding: 10%;
+#logo {
+    top: 0;
+    background-color: orange;
 }
 
-.fitimage {
-    width: 100%;
-    object-fit: cover;
+#control {
+    bottom: 0;
+    background-color: green;
 }
