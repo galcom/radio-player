@@ -15,16 +15,16 @@ html, body, #root {
     right: 0;
     height: 50%;
     text-align: center;
+    padding-top: 5%;
+    background-color: #1c2228;
 }
 
 #top {
     top: 0;
-    background-color: orange;
 }
 
 #bottom {
     bottom: 0;
-    background-color: green;
 }
 
 #logo {
