@@ -10,9 +10,6 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
         <button className='button'></button>
       </header>
     </div>
