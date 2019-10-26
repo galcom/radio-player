@@ -16,54 +16,53 @@ function availabilityCheck(url) {
 }
 
 class Radio extends React.Component {
-    componentDidMount() {
-        const values = queryString.parse(this.props.location.search)
-        this.setState({ streamUrl: values.streamUrl, logo: values.logo })
-        availabilityCheck(values.streamUrl)
+  componentDidMount() {
+    const values = queryString.parse(this.props.location.search)
+    this.setState({ streamUrl: values.streamUrl, logo: values.logo })
+    availabilityCheck(values.streamUrl)
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      playing: true,
+      playControlImage: "Play",
+      streamUrl: this.streamUrl,
+      logo: this.logo
+    };
+    console.log("stream: " + this.streamUrl)
+    console.log("playing: " + this.state.playing)
+
+    this.togglePlaying = this.togglePlaying.bind(this);
+    this.onStartPlaying = this.onStartPlaying.bind(this);
+  }
+
+  onStartPlaying() {
+    console.log("playing")
+    this.setState({ playControlImage: "Pause" })
+  }
+
+  togglePlaying() {
+    availabilityCheck(this.state.streamUrl)
+    if (this.state.playing) {
+      this.setState({ playing: false, playControlImage: "Play" })
+    } else {
+      this.setState({ playing: true })
     }
+  }
 
-    constructor(props) {
-        super(props);
-
-        const play = "&#9654;"
-        const pause = "&#9208;"
-        const loading = ""
-
-        this.state = {
-            playing: true,
-            playbackIcon: loading,
-            streamUrl: this.streamUrl,
-            logo: this.logo
-        };
-        console.log("stream: " + this.streamUrl)
-
-        this.togglePlaying = this.togglePlaying.bind(this);
-        this.onStartPlaying = this.onStartPlaying.bind(this);
-    }
-
-    onStartPlaying() {
-        this.setState({ playbackIcon: this.pause })
-    }
-
-    togglePlaying() {
-      availabilityCheck(this.state.streamUrl)
-        if (this.state.playing) {
-            this.setState({ playing: false, playbackIcon: this.play })
-        } else {
-            this.setState({ playing: true, playbackIcon: this.pause })
-        }
-    }
-
-    render() {
-        return (
-            <Player
-                playing={this.state.playing}
-                togglePlaying={this.togglePlaying}
-                onStartPlaying={this.onStartPlaying}
-                streamUrl={this.state.streamUrl}
-            />
-        )
-    }
+  render() {
+    return (
+      <Player
+        playing={this.state.playing}
+        togglePlaying={this.togglePlaying}
+        onStartPlaying={this.onStartPlaying}
+        streamUrl={this.state.streamUrl}
+        playControlImage={this.state.playControlImage}
+      />
+    )
+  }
 }
 
 export default Radio;

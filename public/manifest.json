@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Galcom Radio",
+  "name": "A FaithTech Radio project.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,7 +8,7 @@
       "type": "image/x-icon"
     }
   ],
-  "start_url": ".",
+  "start_url": "http://galcom-radio-player.s3-website-us-east-1.amazonaws.com/?streamUrl=http://xstreamer.galcom.org:8000/GalcomCanada",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
