@@ -59,6 +59,7 @@ class Radio extends React.Component {
         togglePlaying={this.togglePlaying}
         onStartPlaying={this.onStartPlaying}
         streamUrl={this.state.streamUrl}
+        logo={this.state.logo}
         playControlImage={this.state.playControlImage}
       />
     )

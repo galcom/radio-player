@@ -9,7 +9,7 @@ class Player extends React.Component {
             <div id="wrapper">
                 <div id="top">
                   <img
-                    src='FaithTechRadio.png'
+                    src={"logos/" + this.props.logo}
                     alt="logo"
                     id="logo"
                   />
