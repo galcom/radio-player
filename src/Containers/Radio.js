@@ -17,22 +17,32 @@ function availabilityCheck(url) {
 
 class Radio extends React.Component {
   componentDidMount() {
+    // load the stream id from the url query string
     const values = queryString.parse(this.props.location.search)
-    this.setState({ streamUrl: values.streamUrl, logo: values.logo })
-    availabilityCheck(values.streamUrl)
+
+    // use the stream id to load the config json
+    // TODO: Find a better way to access the streams dir
+    console.log("Loading ../../public/streams/" + values.id + ".json")
+    const config = require("../../public/streams/" + values.id + ".json");
+    console.log(config)
+
+    // add the relevant data to the radio's state
+    this.setState({
+      // TODO: Choose between the various streams (mp3, ogg, etc.)
+      streamUrl: config["streams"][0]["url"],
+      logo: config["logo"],
+    })
   }
 
   constructor(props) {
     super(props);
 
-    // set radio state
+    // set initial radio state
     this.state = {
       playing: true,
       playControlImage: "Play",
-      streamUrl: this.streamUrl,
-      logo: this.logo
+      config: this.config,
     };
-    console.log("Playing: " + this.state.playing)
 
     this.togglePlaying = this.togglePlaying.bind(this);
     this.onStartPlaying = this.onStartPlaying.bind(this);
