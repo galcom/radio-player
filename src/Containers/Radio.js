@@ -26,11 +26,21 @@ class Radio extends React.Component {
     const config = require("../../public/streams/" + values.id + ".json");
     console.log(config)
 
+    // choose the stream url
+    // TODO: Choose between the various streams (mp3, ogg, etc.)
+    const streamUrl = config["streams"][0]["url"]
+
+    // get the logo url
+    var logo = config["logo"]
+    if (logo === "") {
+      // fallback to default logo
+      logo = "logos/default.png"
+    }
+
     // add the relevant data to the radio's state
     this.setState({
-      // TODO: Choose between the various streams (mp3, ogg, etc.)
-      streamUrl: config["streams"][0]["url"],
-      logo: config["logo"],
+      streamUrl: streamUrl,
+      logo: logo,
     })
   }
 
