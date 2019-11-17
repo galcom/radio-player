@@ -4,12 +4,12 @@
 	"logo": "http://www.galcom.org/wp-content/uploads/2019/04/30Y-Sticker.png.thumb.png",
 	"streams": [
 		{
-			"src": "http://xstreamer.galcom.org:8000/GalcomCanada",
+			"url": "http://xstreamer.galcom.org:8000/GalcomCanada",
 			"type": "audio/mpeg",
 			"icecast": "GalcomCanada"
 		},
 		{
-			"src": "http://xstreamer.galcom.org:8000/GalcomCanadaOgg",
+			"url": "http://xstreamer.galcom.org:8000/GalcomCanadaOgg",
 			"type": "application/ogg",
 			"icecast": "GalcomCanadaOgg"
 		}

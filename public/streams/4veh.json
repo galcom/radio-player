@@ -4,12 +4,12 @@
 	"logo": "http://www.galcom.org/wp-content/uploads/2019/10/4veh.png.thumb.png",
 	"streams": [
 		{
-			"src": "http://xstreamer.galcom.org:8000/Radio_4VEH",
+			"url": "http://xstreamer.galcom.org:8000/Radio_4VEH",
 			"type": "audio/mpeg",
 			"icecast": "Radio4VEH"
 		},
 		{
-			"src": "http://xstreamer.galcom.org:8000/Radio_4VEHOgg",
+			"url": "http://xstreamer.galcom.org:8000/Radio_4VEHOgg",
 			"type": "application/ogg",
 			"icecast": "Radio4VEHOgg"
 		}

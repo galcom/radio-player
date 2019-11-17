@@ -4,12 +4,12 @@
 	"logo": "http://www.galcom.org/wp-content/uploads/2015/11/LighthouseChristianRadio.jpg.thumb.png",
 	"streams": [
 		{
-			"src": "http://xstreamer.galcom.org:8000/LighthouseRadio",
+			"url": "http://xstreamer.galcom.org:8000/LighthouseRadio",
 			"type": "audio/mpeg",
 			"icecast": "LighthouseRadio"
 		},
 		{
-			"src": "http://xstreamer.galcom.org:8000/LighthouseRadioOgg",
+			"url": "http://xstreamer.galcom.org:8000/LighthouseRadioOgg",
 			"type": "application/ogg",
 			"icecast": "LighthouseRadioOgg"
 		}

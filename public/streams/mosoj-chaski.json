@@ -4,12 +4,12 @@
 	"logo": "http://www.galcom.org/wp-content/uploads/2019/10/logomosojsmaller_square.png.thumb.png",
 	"streams": [
 		{
-			"src": "http://xstreamer.galcom.org:8000/Mosoj-Chaski-Radio",
+			"url": "http://xstreamer.galcom.org:8000/Mosoj-Chaski-Radio",
 			"type": "audio/mpeg",
 			"icecast": "MosojChaski"
 		},
 		{
-			"src": "http://xstreamer.galcom.org:8000/Mosoj-Chaski-RadioOgg",
+			"url": "http://xstreamer.galcom.org:8000/Mosoj-Chaski-RadioOgg",
 			"type": "application/ogg",
 			"icecast": "MosojChaskiOgg"
 		}
