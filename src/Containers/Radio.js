@@ -6,13 +6,13 @@ const isReachable = require('is-reachable');
 function availabilityCheck(url) {
   isReachable('https://google.com')
   .then(internetStatus => {
-    console.log("Internet Is Accessible")
+    console.log("Internet is accessible")
     if (internetStatus){
     } else {
-      console.log("Internet Is Not Accessible")
+      console.log("Internet is not accessible")
     }
   })
-  .catch(error => console.log('Failed to test google. Error: ' + error))
+  .catch(error => console.log("Failed to test google. Error: " + error))
 }
 
 class Radio extends React.Component {
@@ -25,21 +25,21 @@ class Radio extends React.Component {
   constructor(props) {
     super(props);
 
+    // set radio state
     this.state = {
       playing: true,
       playControlImage: "Play",
       streamUrl: this.streamUrl,
       logo: this.logo
     };
-    console.log("stream: " + this.streamUrl)
-    console.log("playing: " + this.state.playing)
+    console.log("Playing: " + this.state.playing)
 
     this.togglePlaying = this.togglePlaying.bind(this);
     this.onStartPlaying = this.onStartPlaying.bind(this);
   }
 
   onStartPlaying() {
-    console.log("playing")
+    console.log("Playing")
     this.setState({ playControlImage: "Pause" })
   }
 
@@ -53,6 +53,7 @@ class Radio extends React.Component {
   }
 
   render() {
+    // render the radio
     return (
       <Player
         playing={this.state.playing}
