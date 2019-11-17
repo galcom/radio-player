@@ -1,0 +1,17 @@
+{
+	"name": "Vision Africa Radio",
+	"website": "http://visionafrica.org/missions/radio-station/",
+	"logo": "http://www.galcom.org/wp-content/uploads/2017/08/unnamed.png.thumb.png",
+	"streams": [
+		{
+			"url": "http://xstreamer.galcom.org:8000/Love-FM104.1,Umuahia,Nigeria",
+			"type": "audio/mpeg",
+			"icecast": "Love-FM104.1,Umuahia,Nigeria"
+		},
+		{
+			"url": "http://xstreamer.galcom.org:8000/Love-FM104.1,Umuahia,NigeriaOgg",
+			"type": "application/ogg",
+			"icecast": "Love-FM104.1,Umuahia,NigeriaOgg"
+		}
+	]
+}

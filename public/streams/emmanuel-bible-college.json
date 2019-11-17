@@ -1,0 +1,17 @@
+{
+	"name": "Emmanuel Bible College Radio",
+	"website": "",
+	"logo": "",
+	"streams": [
+		{
+			"url": "http://xstreamer.galcom.org:8000/EmmanuelBibleCollegeCampusRadio",
+			"type": "audio/mpeg",
+			"icecast": "EmmanuelBibleCollegeCampusRadio"
+		},
+		{
+			"url": "http://xstreamer.galcom.org:8000/EmmanuelBibleCollegeCampusRadioOgg",
+			"type": "application/ogg",
+			"icecast": "EmmanuelBibleCollegeCampusRadioOgg"
+		}
+	]
+}
