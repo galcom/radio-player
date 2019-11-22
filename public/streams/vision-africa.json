@@ -2,6 +2,8 @@
 	"name": "Vision Africa Radio",
 	"website": "http://visionafrica.org/missions/radio-station/",
 	"logo": "http://www.galcom.org/wp-content/uploads/2017/08/unnamed.png.thumb.png",
+	"foreground-color": "FCFCFC",
+	"background-color": "1C2228",
 	"streams": [
 		{
 			"url": "http://xstreamer.galcom.org:8000/Love-FM104.1,Umuahia,Nigeria",
