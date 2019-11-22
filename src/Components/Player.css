@@ -1,30 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
 html, body, #root {
     height: 100%;
     margin: 0;
+    padding: 0;
 }
 
 #wrapper {
     min-height: 100%; 
-    background-color: #ffffff;
-
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    justify-content: center;
 }
 
-#top, #bottom {
-    position: fixed;
-    left: 0;
-    right: 0;
-    height: 50%;
+#top, #middle {
+    width: 100%;
     text-align: center;
-    padding-top: 5%;
-    background-color: #1c2228;
+    padding-top: 3em;
 }
 
-#top {
-    top: 0;
-}
-
-#bottom {
-    bottom: 0;
+#middle {
+    position: relative;
+    height: 45%;
 }
 
 #logo {
@@ -32,7 +32,66 @@ html, body, #root {
     max-height: 100%;
 }
 
-#control {
-    max-width: 50%;
-    max-height: 50%;
+#playpause {
+    max-width: 34%;
+    max-height: 34%;
+}
+
+#loading {
+    position: absolute;
+    left: 50%;
+    /* top: 50%; */
+    z-index: 10;
+    margin: 0 0 0 -100px;
+    border: 30px solid #1c2228;
+    border-radius: 50%;
+    border-right: 30px solid #fcfcfc;
+    border-right: linear-gradient(45deg, #1c2228, #fcfcfc) 1;
+    width: 200px;
+    height: 200px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+#audio-wrapper {
+    display: inline;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.text-contents {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0.5em 4em;
+    bottom: 0;
+}
+
+.visible {
+    display: inline-block;
+}
+
+.hidden {
+    display: none;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

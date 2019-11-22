@@ -12,36 +12,55 @@ class Player extends React.Component {
     }
 
     return (
-      <div id="wrapper">
-        <div id="top" style={colorStyles}>
+      <div id="wrapper" style={colorStyles}>
+        <div id="top">
           <img
             src={this.props.logo}
             alt="logo"
             id="logo"
           />
         </div>
-        <div id="bottom" style={colorStyles}>
-            <img
-              id="control"
-              src={this.props.playControlImage + ".gif"}
-              alt="play/pause"
-              onClick={() => {
-                this.props.togglePlaying()
-              }}
-            />
-            <FilePlayer
-                url={this.props.streamUrl}
-                playing={this.props.playing}
-                config={{
-                  file: {
-                    forceAudio: true,
-                    autoplay: true
-                  }
-                }}
-                onPlay={() => {
-                  this.props.onStartPlaying()
-                }}
-            />
+        <div id="middle">
+          <img
+            id="play"
+            className={!this.props.playing ? "visible" : "hidden"}
+            src="play.gif"
+            alt="Play"
+            onClick={() => { this.props.togglePlaying() }}
+          />
+          <div
+            id="loading"
+            className={this.props.playing && !this.props.ready ? "visible" : "hidden"}
+            onClick={() => { this.props.togglePlaying() }}
+          />
+          <img
+            id="pause"
+            className={this.props.playing && this.props.ready ? "visible" : "hidden"}
+            src="pause.gif"
+            alt="Pause"
+            onClick={() => { this.props.togglePlaying() }}
+          />
+          <FilePlayer
+            id="audio-wrapper"
+            url={this.props.streamUrl}
+            playing={this.props.playing}
+            config={{
+              file: {
+                forceAudio: true,
+                autoplay: true
+              }
+            }}
+            onReady={() => {
+              this.props.onReady()
+            }}
+            onBuffer={() => {
+              this.props.onBuffer()
+            }}
+          />
+        </div>
+        <div id="footer" className="contents">
+          <span className="text-contents">a <strong>FAITH</strong>TECH product</span>
+          <span className="text-contents">hosted by <strong>GALCOM</strong></span>
         </div>
       </div>
     )
