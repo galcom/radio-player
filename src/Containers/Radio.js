@@ -63,6 +63,7 @@ class Radio extends React.Component {
   }
 
   onBuffer() {
+    this.setState({ ready: false })
     console.log("Stream is buffering.")
   }
 
