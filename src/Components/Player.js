@@ -38,6 +38,9 @@ class Player extends React.Component {
                     autoplay: true
                   }
                 }}
+                onPlay={() => {
+                  this.props.onStartPlaying()
+                }}
             />
         </div>
       </div>
