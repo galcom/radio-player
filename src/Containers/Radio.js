@@ -72,6 +72,9 @@ class Radio extends React.Component {
       // TODO: implement check if the station is available
       //availabilityCheck(this.state.streamUrl)
 
+      // TODO: Choose between the various streams (mp3, ogg, etc.)
+      this.setState({ streamUrl: this.state.streams[0]["url"] })
+
       // paused -> loading
       this.setState({ playing: true })
       console.log("User requested play.")
