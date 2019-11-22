@@ -29,6 +29,9 @@ class Radio extends React.Component {
     // set the page title to the radio station's name
     document.title = config["name"];
 
+    // TODO: implement check if the station is available
+    //availabilityCheck(this.state.streamUrl)
+
     // choose the stream url
     // TODO: Choose between the various streams (mp3, ogg, etc.)
     config["streamUrl"] = config["streams"][0]["url"]
