@@ -3,6 +3,7 @@ import Player from '../Components/Player'
 import queryString from 'query-string'
 const isReachable = require('is-reachable');
 
+
 function availabilityCheck(url) {
   isReachable('https://google.com')
   .then(internetStatus => {
@@ -26,6 +27,9 @@ class Radio extends React.Component {
     const config = require("../../public/streams/" + values.id + ".json");
     console.log(config)
 
+    // set the page title to the radio station's name
+    document.title = config["name"];
+
     // choose the stream url
     // TODO: Choose between the various streams (mp3, ogg, etc.)
     const streamUrl = config["streams"][0]["url"]
@@ -41,6 +45,8 @@ class Radio extends React.Component {
     this.setState({
       streamUrl: streamUrl,
       logo: logo,
+      foregroundColor: config["foreground-color"],
+      backgroundColor: config["background-color"],
     })
   }
 
@@ -81,6 +87,8 @@ class Radio extends React.Component {
         onStartPlaying={this.onStartPlaying}
         streamUrl={this.state.streamUrl}
         logo={this.state.logo}
+        foregroundColor={this.state.foregroundColor}
+        backgroundColor={this.state.backgroundColor}
         playControlImage={this.state.playControlImage}
       />
     )
