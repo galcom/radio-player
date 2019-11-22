@@ -49,7 +49,7 @@ class Radio extends React.Component {
 
     // set initial radio state
     this.state = {
-      playing: true,
+      playing: false,
       playControlImage: "Play",
       config: this.config,
     };
