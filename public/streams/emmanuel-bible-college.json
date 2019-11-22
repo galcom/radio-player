@@ -2,8 +2,8 @@
 	"name": "Emmanuel Bible College Radio",
 	"website": "",
 	"logo": "",
-	"foreground-color": "#fcfcfc",
-	"background-color": "#1c2228",
+	"foregroundColor": "#fcfcfc",
+	"backgroundColor": "#1c2228",
 	"streams": [
 		{
 			"url": "http://xstreamer.galcom.org:8000/EmmanuelBibleCollegeCampusRadio",
