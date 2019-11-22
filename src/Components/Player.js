@@ -24,7 +24,7 @@ class Player extends React.Component {
           <img
             id="play"
             className={!this.props.playing ? "visible" : "hidden"}
-            src="play.gif"
+            src="./images/play.gif"
             alt="Play"
             onClick={() => { this.props.togglePlaying() }}
           />
@@ -36,7 +36,7 @@ class Player extends React.Component {
           <img
             id="pause"
             className={this.props.playing && this.props.ready ? "visible" : "hidden"}
-            src="pause.gif"
+            src="./images/pause.gif"
             alt="Pause"
             onClick={() => { this.props.togglePlaying() }}
           />
