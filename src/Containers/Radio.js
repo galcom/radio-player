@@ -23,58 +23,68 @@ class Radio extends React.Component {
 
     // use the stream id to load the config json
     // TODO: Find a better way to access the streams dir
-    console.log("Loading ../../public/streams/" + values.id + ".json")
     const config = require("../../public/streams/" + values.id + ".json");
-    console.log(config)
+    console.log("Settings loaded from ../../public/streams/" + values.id + ".json")
 
     // set the page title to the radio station's name
     document.title = config["name"];
 
+    // TODO: implement check if the station is available
+    //availabilityCheck(this.state.streamUrl)
+
     // choose the stream url
     // TODO: Choose between the various streams (mp3, ogg, etc.)
-    const streamUrl = config["streams"][0]["url"]
+    config["streamUrl"] = config["streams"][0]["url"]
 
-    // get the logo url
-    var logo = config["logo"]
-    if (logo === "") {
-      // fallback to default logo
-      logo = "logos/default.png"
+    // use the default logo if none has been provided
+    if (config["logo"] === "") {
+      config["logo"] = "logos/default.png"
     }
 
+    // set the radio's initial state
+    config["playing"] = false
+    config["ready"] = false
+
     // add the relevant data to the radio's state
-    this.setState({
-      streamUrl: streamUrl,
-      logo: logo,
-      foregroundColor: config["foreground-color"],
-      backgroundColor: config["background-color"],
-    })
+    this.setState(config)
   }
 
   constructor(props) {
     super(props);
 
-    // set initial radio state
-    this.state = {
-      playing: false,
-      playControlImage: "Play",
-      config: this.config,
-    };
+    // set radio's inital state
+    this.state = {}
 
+    this.onReady = this.onReady.bind(this);
+    this.onBuffer = this.onBuffer.bind(this);
     this.togglePlaying = this.togglePlaying.bind(this);
-    this.onStartPlaying = this.onStartPlaying.bind(this);
   }
 
-  onStartPlaying() {
-    console.log("Playing")
-    this.setState({ playControlImage: "Pause" })
+  onReady() {
+    console.log("Stream is ready to play.")
+    this.setState({ ready: true })
+  }
+
+  onBuffer() {
+    this.setState({ ready: false })
+    console.log("Stream is buffering.")
   }
 
   togglePlaying() {
-    availabilityCheck(this.state.streamUrl)
-    if (this.state.playing) {
-      this.setState({ playing: false, playControlImage: "Play" })
-    } else {
+    if (this.state.playing === false) {
+      // TODO: implement check if the station is available
+      //availabilityCheck(this.state.streamUrl)
+
+      // TODO: Choose between the various streams (mp3, ogg, etc.)
+      this.setState({ streamUrl: this.state.streams[0]["url"] })
+
+      // paused -> loading
       this.setState({ playing: true })
+      console.log("User requested play.")
+    } else {
+      // loading/playing -> paused
+      this.setState({ playing: false})
+      console.log("User requested pause.")
     }
   }
 
@@ -82,14 +92,18 @@ class Radio extends React.Component {
     // render the radio
     return (
       <Player
-        playing={this.state.playing}
-        togglePlaying={this.togglePlaying}
-        onStartPlaying={this.onStartPlaying}
+        // player settings
         streamUrl={this.state.streamUrl}
         logo={this.state.logo}
         foregroundColor={this.state.foregroundColor}
         backgroundColor={this.state.backgroundColor}
-        playControlImage={this.state.playControlImage}
+
+        // player controls
+        playing={this.state.playing}
+        ready={this.state.ready}
+        onReady={this.onReady}
+        onBuffer={this.onBuffer}
+        togglePlaying={this.togglePlaying}
       />
     )
   }
