@@ -5,16 +5,11 @@ import FilePlayer from 'react-player/lib/players/FilePlayer'
 
 class Player extends React.Component {
   render() {
-    // create background & foreground color styles
-    const bgStyles = {
-      "background-color": this.props.backgroundColor,
-    }
-    const fgStyles = {
-      "border-right": "30px solid " + this.props.foregroundColor,
-    }
-
     return (
-      <div id="wrapper" style={bgStyles}>
+      <div
+        id="wrapper"
+        style={{ "background-color": this.props.backgroundColor }}
+      >
         <div id="top">
           <img
             src={this.props.logo}
@@ -32,7 +27,7 @@ class Player extends React.Component {
           />
           <div
             id="loading"
-            style={fgStyles}
+            style={{ "border-right": "30px solid " + this.props.foregroundColor }}
             className={this.props.playing && !this.props.ready ? "visible" : "hidden"}
             onClick={() => { this.props.togglePlaying() }}
           />
@@ -61,9 +56,20 @@ class Player extends React.Component {
             }}
           />
         </div>
-        <div id="footer" className="contents">
-          <span className="text-contents">a <strong>FAITH</strong>TECH product</span>
-          <span className="text-contents">hosted by <strong>GALCOM</strong></span>
+        <div
+          id="footer"
+          style= {{
+            "color": this.props.foregroundColor,
+            "opacity": 0.5,
+          }}
+          className="contents"
+        >
+          <span className="text-contents">
+            a <a href="https://faithtech.com/"><strong>FAITH</strong>TECH</a> product
+          </span>
+          <span className="text-contents">
+            hosted by <strong><a href="http://www.galcom.org/">GALCOM</a></strong>
+          </span>
         </div>
       </div>
     )

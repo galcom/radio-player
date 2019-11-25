@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 import Player from '../Components/Player'
 import queryString from 'query-string'
-const isReachable = require('is-reachable');
+const isReachable = require('is-reachable')
 
 
 function availabilityCheck(url) {
@@ -23,11 +23,11 @@ class Radio extends React.Component {
 
     // use the stream id to load the config json
     // TODO: Find a better way to access the streams dir
-    const config = require("../../public/streams/" + values.id + ".json");
+    const config = require("../../public/streams/" + values.id + ".json")
     console.log("Settings loaded from ../../public/streams/" + values.id + ".json")
 
     // set the page title to the radio station's name
-    document.title = config["name"];
+    document.title = config["name"]
 
     // TODO: implement check if the station is available
     //availabilityCheck(this.state.streamUrl)
@@ -50,14 +50,14 @@ class Radio extends React.Component {
   }
 
   constructor(props) {
-    super(props);
+    super(props)
 
     // set radio's inital state
     this.state = {}
 
-    this.onReady = this.onReady.bind(this);
-    this.onBuffer = this.onBuffer.bind(this);
-    this.togglePlaying = this.togglePlaying.bind(this);
+    this.onReady = this.onReady.bind(this)
+    this.onBuffer = this.onBuffer.bind(this)
+    this.togglePlaying = this.togglePlaying.bind(this)
   }
 
   onReady() {
@@ -109,4 +109,5 @@ class Radio extends React.Component {
   }
 }
 
-export default Radio;
+
+export default Radio

@@ -40,13 +40,12 @@ html, body, #root {
 #loading {
     position: absolute;
     left: 50%;
-    /* top: 50%; */
     z-index: 10;
     margin: 0 0 0 -100px;
     border: 30px solid #1c2228;
     border-radius: 50%;
-    /* The below value is set in Player.js:
-    border-right: 30px solid #fcfcfc;*/
+    /* the below value is overridden by Player.js */
+    border-right: 30px solid #fcfcfc;
     border-right: linear-gradient(45deg, #1c2228, #fcfcfc) 1;
     width: 200px;
     height: 200px;
@@ -77,6 +76,15 @@ html, body, #root {
     justify-content: space-between;
     padding: 0.5em 4em;
     bottom: 0;
+    text-decoration: none;
+}
+
+.text-contents a {
+    color: inherit;
+}
+
+.text-contents a:hover {
+    color: inherit;
 }
 
 .visible {
