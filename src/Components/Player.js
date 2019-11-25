@@ -6,13 +6,15 @@ import FilePlayer from 'react-player/lib/players/FilePlayer'
 class Player extends React.Component {
   render() {
     // create background & foreground color styles
-    const colorStyles = {
-      foregroundColor: this.props.foregroundColor,
-      backgroundColor: this.props.backgroundColor,
+    const bgStyles = {
+      "background-color": this.props.backgroundColor,
+    }
+    const fgStyles = {
+      "border-right": "30px solid " + this.props.foregroundColor,
     }
 
     return (
-      <div id="wrapper" style={colorStyles}>
+      <div id="wrapper" style={bgStyles}>
         <div id="top">
           <img
             src={this.props.logo}
@@ -30,6 +32,7 @@ class Player extends React.Component {
           />
           <div
             id="loading"
+            style={fgStyles}
             className={this.props.playing && !this.props.ready ? "visible" : "hidden"}
             onClick={() => { this.props.togglePlaying() }}
           />

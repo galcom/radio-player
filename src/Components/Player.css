@@ -45,7 +45,8 @@ html, body, #root {
     margin: 0 0 0 -100px;
     border: 30px solid #1c2228;
     border-radius: 50%;
-    border-right: 30px solid #fcfcfc;
+    /* The below value is set in Player.js:
+    border-right: 30px solid #fcfcfc;*/
     border-right: linear-gradient(45deg, #1c2228, #fcfcfc) 1;
     width: 200px;
     height: 200px;
