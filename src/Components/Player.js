@@ -8,7 +8,7 @@ class Player extends React.Component {
     return (
       <div
         id="wrapper"
-        style={{ "background-color": this.props.backgroundColor }}
+        style={{ "backgroundColor": this.props.backgroundColor }}
       >
         <div id="top">
           <img
@@ -20,20 +20,20 @@ class Player extends React.Component {
         <div id="middle">
           <img
             id="play"
-            className={!this.props.playing ? "visible" : "hidden"}
+            className={this.props.isPlaying ? "hidden" : "visible"}
             src="./images/play.gif"
             alt="Play"
             onClick={() => { this.props.togglePlaying() }}
           />
           <div
             id="loading"
-            style={{ "border-right": "30px solid " + this.props.foregroundColor }}
-            className={this.props.playing && !this.props.ready ? "visible" : "hidden"}
+            style={{ "borderRight": "30px solid " + this.props.foregroundColor }}
+            className={this.props.isPlaying && !this.props.isReady ? "visible" : "hidden"}
             onClick={() => { this.props.togglePlaying() }}
           />
           <img
             id="pause"
-            className={this.props.playing && this.props.ready ? "visible" : "hidden"}
+            className={this.props.isPlaying && this.props.isReady ? "visible" : "hidden"}
             src="./images/pause.gif"
             alt="Pause"
             onClick={() => { this.props.togglePlaying() }}
@@ -41,19 +41,16 @@ class Player extends React.Component {
           <FilePlayer
             id="audio-wrapper"
             url={this.props.streamUrl}
-            playing={this.props.playing}
+            playing={this.props.isPlaying}
             config={{
               file: {
                 forceAudio: true,
                 autoplay: true
               }
             }}
-            onReady={() => {
-              this.props.onReady()
-            }}
-            onBuffer={() => {
-              this.props.onBuffer()
-            }}
+            onReady={() => { this.props.onReady() }}
+            onBuffer={() => { this.props.onBuffer() }}
+            onError={() => { this.props.onError() }}
           />
         </div>
         <div

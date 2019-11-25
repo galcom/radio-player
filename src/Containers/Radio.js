@@ -1,22 +1,59 @@
 import React from 'react'
 import Player from '../Components/Player'
 import queryString from 'query-string'
-const isReachable = require('is-reachable')
 
 
-function availabilityCheck(url) {
-  isReachable('https://google.com')
-  .then(internetStatus => {
-    console.log("Internet is accessible")
-    if (internetStatus){
-    } else {
-      console.log("Internet is not accessible")
+function chooseStreamUrl(streams) {
+  const audio = document.createElement('audio');
+
+  // find a playable media type
+  var url = "", type = "", playable = ""
+  for (const stream of streams) {
+    // canPlayType returns "probably", "maybe", and ""
+    var status = audio.canPlayType(stream["type"])
+    if (status === "") {
+      status = "not"
     }
-  })
-  .catch(error => console.log("Failed to test google. Error: " + error))
+    console.log("Media type " + stream["type"] + " is " + status + " playable.")
+
+    // status hierarchy: probably > maybe > not
+    if (status === "probably" || (status === "maybe" && playable === "")) {
+      url = stream["url"]
+      type = stream["type"]
+      playable = status
+    }
+  }
+
+  if (url === "") {
+    console.log("No stream is playable.")
+  } else {
+    console.log("Chose url " + url + " (" + type + ").")
+  }
+
+  return url
 }
 
+
+function isOnline() {
+  console.log("Device is" + (navigator.onLine ? " " : " not ") + "online.")
+  return navigator.onLine
+}
+
+
 class Radio extends React.Component {
+  constructor(props) {
+    super(props)
+
+    // set radio's initial state
+    this.state = {}
+
+    // bind function callbacks
+    this.onReady = this.onReady.bind(this)
+    this.onBuffer = this.onBuffer.bind(this)
+    this.togglePlaying = this.togglePlaying.bind(this)
+    this.onError = this.onError.bind(this)
+  }
+
   componentDidMount() {
     // load the stream id from the url query string
     const values = queryString.parse(this.props.location.search)
@@ -29,12 +66,8 @@ class Radio extends React.Component {
     // set the page title to the radio station's name
     document.title = config["name"]
 
-    // TODO: implement check if the station is available
-    //availabilityCheck(this.state.streamUrl)
-
-    // choose the stream url
-    // TODO: Choose between the various streams (mp3, ogg, etc.)
-    config["streamUrl"] = config["streams"][0]["url"]
+    // choose the stream url (must be accessible and playable)
+    config["streamUrl"] = chooseStreamUrl(config["streams"])
 
     // use the default logo if none has been provided
     if (config["logo"] === "") {
@@ -42,49 +75,66 @@ class Radio extends React.Component {
     }
 
     // set the radio's initial state
-    config["playing"] = false
-    config["ready"] = false
+    config["isOnline"] = isOnline() // is the device online
+    config["isBroadcasting"] = true // is the radio station broadcasting
+    config["isPlaying"] = false     // is the audio playing
+    config["isReady"] = false       // is the Player ready to play
 
     // add the relevant data to the radio's state
     this.setState(config)
   }
 
-  constructor(props) {
-    super(props)
+  onBuffer() {
+    // stream is buffering
+    this.setState({ isReady: false })
+    console.log("Stream is buffering.")
 
-    // set radio's inital state
-    this.state = {}
-
-    this.onReady = this.onReady.bind(this)
-    this.onBuffer = this.onBuffer.bind(this)
-    this.togglePlaying = this.togglePlaying.bind(this)
+    // check the internet status (did we lose internet?)
+    this.setState({ isOnline: isOnline() })
   }
 
   onReady() {
+    // stream is now ready to play
     console.log("Stream is ready to play.")
-    this.setState({ ready: true })
-  }
-
-  onBuffer() {
-    this.setState({ ready: false })
-    console.log("Stream is buffering.")
+    this.setState({
+      isReady: true,
+      isBroadcasting: true,
+    })
   }
 
   togglePlaying() {
-    if (this.state.playing === false) {
-      // TODO: implement check if the station is available
-      //availabilityCheck(this.state.streamUrl)
-
-      // TODO: Choose between the various streams (mp3, ogg, etc.)
-      this.setState({ streamUrl: this.state.streams[0]["url"] })
-
+    if (this.state.isPlaying === false) {
       // paused -> loading
-      this.setState({ playing: true })
+      this.setState({ isPlaying: true })
       console.log("User requested play.")
+
     } else {
       // loading/playing -> paused
-      this.setState({ playing: false})
+      this.setState({ isPlaying: false})
       console.log("User requested pause.")
+    }
+  }
+
+  onError() {
+    console.log("Error playing " + this.state.streamUrl + ".")
+
+    // update isReady and isPlaying, to be safe (should already be false)
+    this.setState({
+      isReady: false,
+      isPlaying: false,
+    })
+
+    if (isOnline() === false) {
+      // internet connection lost
+      this.setState({ isOnline: false })
+
+    } else {
+      // the station must not be broadcasting
+      console.log("Url " + this.state.streamUrl + " is not broadcasting.")
+      this.setState({ isBroadcasting: false })
+
+      // TODO: try swapping stream urls
+      // this.setState({ streamUrl: this.state.streams[???]["url"] })
     }
   }
 
@@ -94,16 +144,20 @@ class Radio extends React.Component {
       <Player
         // player settings
         streamUrl={this.state.streamUrl}
+        streams={this.state.streams}
         logo={this.state.logo}
         foregroundColor={this.state.foregroundColor}
         backgroundColor={this.state.backgroundColor}
 
         // player controls
-        playing={this.state.playing}
-        ready={this.state.ready}
+        isOnline={this.state.isOnline}
+        isBroadcasting={this.state.isBroadcasting}
+        isPlaying={this.state.isPlaying}
+        isReady={this.state.isReady}
         onReady={this.onReady}
         onBuffer={this.onBuffer}
         togglePlaying={this.togglePlaying}
+        onError={this.onError}
       />
     )
   }
