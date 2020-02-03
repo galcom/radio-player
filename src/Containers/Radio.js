@@ -1,6 +1,5 @@
 import React from 'react'
 import Player from '../Components/Player'
-import queryString from 'query-string'
 
 
 function chooseStreamUrl(streams) {
@@ -55,13 +54,11 @@ class Radio extends React.Component {
   }
 
   componentDidMount() {
-    // load the stream id from the url query string
-    const values = queryString.parse(this.props.location.search)
-
     // use the stream id to load the config json
     // TODO: Find a better way to access the streams dir
-    const config = require("../../public/streams/" + values.id + ".json")
-    console.log("Settings loaded from ../../public/streams/" + values.id + ".json")
+    const station_id = this.props.location.pathname
+    const config = require("../../public/streams" + station_id + ".json")
+    console.log("Settings loaded from ../../public/streams" + station_id + ".json")
 
     // set the page title to the radio station's name
     document.title = config["name"]
