@@ -1,5 +1,6 @@
 import React from "react";
 import Player from "../Components/Player";
+import queryString from "query-string";
 
 function chooseStreamUrl(streams) {
   const audio = document.createElement("audio");
@@ -55,9 +56,9 @@ class Radio extends React.Component {
   }
 
   componentDidMount() {
-    const station_id = this.props.location.pathname;
+    const values = queryString.parse(this.props.location.search);
 
-    fetch(`${process.env.PUBLIC_URL}/streams/${station_id}.json`)
+    fetch(`${process.env.PUBLIC_URL}/streams/${values.station}.json`)
       .then(j => j.json())
       .then(config => {
         document.title = config["name"];
