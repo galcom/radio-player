@@ -1,21 +1,13 @@
-import React from 'react';
-import './Player.css';
-import FilePlayer from 'react-player/lib/players/FilePlayer'
-
+import React from "react";
+import "./Player.css";
+import FilePlayer from "react-player/lib/players/FilePlayer";
 
 class Player extends React.Component {
   render() {
     return (
-      <div
-        id="wrapper"
-        style={{ "backgroundColor": this.props.backgroundColor }}
-      >
+      <div id="wrapper" style={{ backgroundColor: this.props.backgroundColor }}>
         <div id="top">
-          <img
-            src={this.props.logo}
-            alt="logo"
-            id="logo"
-          />
+          <img src={this.props.logo} alt="logo" id="logo" />
         </div>
         <div id="middle">
           <img
@@ -23,20 +15,30 @@ class Player extends React.Component {
             className={this.props.isPlaying ? "hidden" : "visible"}
             src="./images/play.gif"
             alt="Play"
-            onClick={() => { this.props.togglePlaying() }}
+            onClick={() => {
+              this.props.togglePlaying();
+            }}
           />
           <div
             id="loading"
-            style={{ "borderRight": "30px solid " + this.props.foregroundColor }}
-            className={this.props.isPlaying && !this.props.isReady ? "visible" : "hidden"}
-            onClick={() => { this.props.togglePlaying() }}
+            style={{ borderRight: "30px solid " + this.props.foregroundColor }}
+            className={
+              this.props.isPlaying && !this.props.isReady ? "visible" : "hidden"
+            }
+            onClick={() => {
+              this.props.togglePlaying();
+            }}
           />
           <img
             id="pause"
-            className={this.props.isPlaying && this.props.isReady ? "visible" : "hidden"}
+            className={
+              this.props.isPlaying && this.props.isReady ? "visible" : "hidden"
+            }
             src="./images/pause.gif"
             alt="Pause"
-            onClick={() => { this.props.togglePlaying() }}
+            onClick={() => {
+              this.props.togglePlaying();
+            }}
           />
           <FilePlayer
             id="audio-wrapper"
@@ -48,30 +50,42 @@ class Player extends React.Component {
                 autoplay: true
               }
             }}
-            onReady={() => { this.props.onReady() }}
-            onBuffer={() => { this.props.onBuffer() }}
-            onError={() => { this.props.onError() }}
+            onReady={() => {
+              this.props.onReady();
+            }}
+            onBuffer={() => {
+              this.props.onBuffer();
+            }}
+            onError={() => {
+              this.props.onError();
+            }}
           />
         </div>
         <div
           id="footer"
-          style= {{
-            "color": this.props.foregroundColor,
-            "opacity": 0.5,
+          style={{
+            color: this.props.foregroundColor,
+            opacity: 0.5
           }}
           className="contents"
         >
           <span className="text-contents">
-            a <a href="https://faithtech.com/"><strong>FAITH</strong>TECH</a> product
+            a{" "}
+            <a href="https://faithtech.com/">
+              <strong>FAITH</strong>TECH
+            </a>{" "}
+            product
           </span>
           <span className="text-contents">
-            hosted by <strong><a href="http://www.galcom.org/">GALCOM</a></strong>
+            hosted by{" "}
+            <strong>
+              <a href="http://www.galcom.org/">GALCOM</a>
+            </strong>
           </span>
         </div>
       </div>
-    )
+    );
   }
 }
-
 
 export default Player;
