@@ -95,7 +95,7 @@ html, body, #root {
     align-items: flex-start;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0.5em 4em;
+    padding: 0.5em 1em;
     bottom: 0;
     text-decoration: none;
 }
