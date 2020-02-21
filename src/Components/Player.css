@@ -30,7 +30,7 @@ html, body, #root {
 
 #middle {
     /* position: relative; */
-    position: relative;
+    position: absolute;
     bottom: 10%;
     left:25%;
     width: 50%;
