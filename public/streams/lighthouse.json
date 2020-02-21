@@ -1,7 +1,7 @@
 {
 	"name": "Lighthouse Radio",
 	"website": "https://www.lighthouseradio.org/",
-	"logo": "http://www.galcom.org/wp-content/uploads/2015/11/LighthouseChristianRadio.jpg.thumb.png",
+	"logo": "logos/lighthouse.png",
 	"foregroundColor": "#fcfcfc",
 	"backgroundColor": "#1c2228",
 	"streams": [
