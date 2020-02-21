@@ -10,7 +10,6 @@ html, body, #root {
 
 #wrapper {
     min-height: 100%; 
-    min-width: 552px;
     width: 100%;
     margin: 0 auto;
     position: relative;
@@ -24,27 +23,37 @@ html, body, #root {
     text-align: center;
 }
 #top {
-    height: 66vh;
+    height: 66%;
+    width: 100%;
+    padding-top: 10%;
 }
 
 #middle {
-    position: relative;
+    /* position: relative; */
+    position: absolute;
+    bottom: 10%;
+    left:25%;
     width: 50%;
-    max-width: 350px;
+    /*max-width: 350px;
     margin: 0 auto;
-    padding: 2em 0;
+    padding:5em 0 2em;*/
 }
 
 #middle img#play {
     width: 30%;
     height: auto;
-    max-height: 230px;
 }
 
 #middle img#pause {
     width: 20%;
     height: auto;
-    max-height: 260px;
+}
+
+#middle #play,
+#middle #loading,
+#middle #pause {
+    max-width: 130px;
+    max-height: 130px;
 }
 
 #logo {
@@ -82,6 +91,7 @@ html, body, #root {
     position: absolute;
     bottom: 0;
     width: 100%;
+    opacity: 0.2;
 }
 
 .contents {
@@ -95,7 +105,7 @@ html, body, #root {
     align-items: flex-start;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0.5em 4em;
+    padding: 0.5em 1em;
     bottom: 0;
     text-decoration: none;
 }
