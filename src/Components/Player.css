@@ -23,17 +23,20 @@ html, body, #root {
     text-align: center;
 }
 #top {
-    padding-top: 10%;
     height: 66%;
     width: 100%;
+    padding-top: 10%;
 }
 
 #middle {
+    /* position: relative; */
     position: relative;
+    bottom: 10%;
+    left:25%;
     width: 50%;
-    max-width: 350px;
+    /*max-width: 350px;
     margin: 0 auto;
-    padding:5em 0 2em;
+    padding:5em 0 2em;*/
 }
 
 #middle img#play {
