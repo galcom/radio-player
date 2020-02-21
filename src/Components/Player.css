@@ -42,13 +42,18 @@ html, body, #root {
 #middle img#play {
     width: 30%;
     height: auto;
-    max-height: 230px;
 }
 
 #middle img#pause {
     width: 20%;
     height: auto;
-    max-height: 260px;
+}
+
+#middle #play,
+#middle #loading,
+#middle #pause {
+    max-width: 130px;
+    max-height: 130px;
 }
 
 #logo {
