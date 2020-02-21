@@ -23,7 +23,8 @@ html, body, #root {
     text-align: center;
 }
 #top {
-    height: 66vh;
+    height: 66%;
+    width: 100%;
 }
 
 #middle {
@@ -31,7 +32,7 @@ html, body, #root {
     width: 50%;
     max-width: 350px;
     margin: 0 auto;
-    padding: 2em 0;
+    padding:5em 0 2em;
 }
 
 #middle img#play {
