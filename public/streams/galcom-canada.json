@@ -1,7 +1,7 @@
 {
 	"name": "Galcom Canada",
 	"website": "http://www.galcom.org/",
-	"logo": "http://www.galcom.org/wp-content/uploads/2019/04/30Y-Sticker.png.thumb.png",
+	"logo": "logos/galcom-canada.png",
 	"foregroundColor": "#fcfcfc",
 	"backgroundColor": "#1c2228",
 	"streams": [

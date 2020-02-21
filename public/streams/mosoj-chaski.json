@@ -1,7 +1,7 @@
 {
 	"name": "Radio Mosoj Chaski",
 	"website": "http://mosojchaski.org/",
-	"logo": "http://www.galcom.org/wp-content/uploads/2019/10/logomosojsmaller_square.png.thumb.png",
+	"logo": "logos/mosoj-chaski.png",
 	"foregroundColor": "#fcfcfc",
 	"backgroundColor": "#1c2228",
 	"streams": [

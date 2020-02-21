@@ -1,7 +1,7 @@
 {
 	"name": "Radio 4VEH",
 	"website": "https://radio4veh.org/",
-	"logo": "http://www.galcom.org/wp-content/uploads/2019/10/4veh.png.thumb.png",
+	"logo": "logos/4veh.png",
 	"foregroundColor": "#fcfcfc",
 	"backgroundColor": "#1c2228",
 	"streams": [
