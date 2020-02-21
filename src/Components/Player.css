@@ -10,7 +10,6 @@ html, body, #root {
 
 #wrapper {
     min-height: 100%; 
-    min-width: 552px;
     width: 100%;
     margin: 0 auto;
     position: relative;
