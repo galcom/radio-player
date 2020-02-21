@@ -65,7 +65,6 @@ class Player extends React.Component {
           id="footer"
           style={{
             color: this.props.foregroundColor,
-            opacity: 0.5
           }}
           className="contents"
         >
