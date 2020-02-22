@@ -1,7 +1,7 @@
 {
 	"name": "Test",
 	"website": "http://www.galcom.org/",
-	"logo": "logos/default.png",
+	"logo": "logos/default-300.png",
 	"foregroundColor": "#fcfcfc",
 	"backgroundColor": "#1c2228",
 	"streams": [
