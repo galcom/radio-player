@@ -1,0 +1,19 @@
+{
+	"name": "Test",
+	"website": "http://www.galcom.org/",
+	"logo": "logos/default.png",
+	"foregroundColor": "#fcfcfc",
+	"backgroundColor": "#1c2228",
+	"streams": [
+		{
+			"url": "http://stream.srg-ssr.ch/m/rsp/mp3_128",
+			"type": "audio/mpeg",
+			"icecast": "GalcomCanada"
+		},
+		{
+			"url": "https://podcast-a.akamaihd.net/mp3/hourlynews.mp3",
+			"type": "application/ogg",
+			"icecast": "GalcomCanadaOgg"
+		}
+	]
+}
