@@ -135,6 +135,7 @@ class Radio extends React.Component {
         // player settings
         streamUrl={this.state.streamUrl}
         streams={this.state.streams}
+        website={this.state.website}
         logo={this.state.logo}
         foregroundColor={this.state.foregroundColor}
         backgroundColor={this.state.backgroundColor}
