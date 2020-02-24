@@ -6,12 +6,12 @@
 	"backgroundColor": "#1c2228",
 	"streams": [
 		{
-			"url": "http://xstreamer.galcom.org:8000/Love-FM104.1,Umuahia,Nigeria",
+			"url": "http://xstreamer.galcom.org:8000/Love-FM104.1-Umuahia-Nigeria",
 			"type": "audio/mpeg",
 			"icecast": "Love-FM104.1,Umuahia,Nigeria"
 		},
 		{
-			"url": "http://xstreamer.galcom.org:8000/Love-FM104.1,Umuahia,NigeriaOgg",
+			"url": "http://xstreamer.galcom.org:8000/Love-FM104.1-Umuahia-NigeriaOgg",
 			"type": "application/ogg",
 			"icecast": "Love-FM104.1,Umuahia,NigeriaOgg"
 		}
