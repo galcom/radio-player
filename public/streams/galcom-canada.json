@@ -1,17 +1,17 @@
 {
 	"name": "Galcom Canada",
-	"website": "http://www.galcom.org/",
+	"website": "https://www.galcom.org/",
 	"logo": "logos/galcom-canada.png",
 	"foregroundColor": "#fcfcfc",
 	"backgroundColor": "#1c2228",
 	"streams": [
 		{
-			"url": "http://xstreamer.galcom.org:8000/GalcomCanada",
+			"url": "https://xstreamer.galcom.org:8000/GalcomCanada",
 			"type": "audio/mpeg",
 			"icecast": "GalcomCanada"
 		},
 		{
-			"url": "http://xstreamer.galcom.org:8000/GalcomCanadaOgg",
+			"url": "https://xstreamer.galcom.org:8000/GalcomCanadaOgg",
 			"type": "application/ogg",
 			"icecast": "GalcomCanadaOgg"
 		}
