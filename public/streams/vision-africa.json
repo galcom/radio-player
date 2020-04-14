@@ -1,19 +1,19 @@
 {
-	"name": "Vision Africa Radio",
-	"website": "http://visionafrica.org/missions/radio-station/",
-	"logo": "logos/vision-africa.png",
-	"foregroundColor": "#fcfcfc",
-	"backgroundColor": "#1c2228",
-	"streams": [
-		{
-			"url": "http://xstreamer.galcom.org:8000/Love-FM104.1-Umuahia-Nigeria",
-			"type": "audio/mpeg",
-			"icecast": "Love-FM104.1,Umuahia,Nigeria"
-		},
-		{
-			"url": "http://xstreamer.galcom.org:8000/Love-FM104.1-Umuahia-NigeriaOgg",
-			"type": "application/ogg",
-			"icecast": "Love-FM104.1,Umuahia,NigeriaOgg"
-		}
-	]
+  "name": "Vision Africa Radio",
+  "website": "http://visionafrica.org/missions/radio-station/",
+  "logo": "logos/vision-africa.png",
+  "foregroundColor": "#fcfcfc",
+  "backgroundColor": "#1c2228",
+  "streams": [
+    {
+      "url": "https://xstreamer.galcom.org:8443/Love-FM104.1-Umuahia-Nigeria",
+      "type": "audio/mpeg",
+      "icecast": "Love-FM104.1,Umuahia,Nigeria"
+    },
+    {
+      "url": "https://xstreamer.galcom.org:8443/Love-FM104.1-Umuahia-NigeriaOgg",
+      "type": "application/ogg",
+      "icecast": "Love-FM104.1,Umuahia,NigeriaOgg"
+    }
+  ]
 }

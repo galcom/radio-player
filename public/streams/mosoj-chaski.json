@@ -1,19 +1,19 @@
 {
-	"name": "Radio Mosoj Chaski",
-	"website": "http://mosojchaski.org/",
-	"logo": "logos/mosoj-chaski.png",
-	"foregroundColor": "#fcfcfc",
-	"backgroundColor": "#1c2228",
-	"streams": [
-		{
-			"url": "http://xstreamer.galcom.org:8000/Mosoj-Chaski-Radio",
-			"type": "audio/mpeg",
-			"icecast": "MosojChaski"
-		},
-		{
-			"url": "http://xstreamer.galcom.org:8000/Mosoj-Chaski-RadioOgg",
-			"type": "application/ogg",
-			"icecast": "MosojChaskiOgg"
-		}
-	]
+  "name": "Radio Mosoj Chaski",
+  "website": "http://mosojchaski.org/",
+  "logo": "logos/mosoj-chaski.png",
+  "foregroundColor": "#fcfcfc",
+  "backgroundColor": "#1c2228",
+  "streams": [
+    {
+      "url": "https://xstreamer.galcom.org:8443/Mosoj-Chaski-Radio",
+      "type": "audio/mpeg",
+      "icecast": "MosojChaski"
+    },
+    {
+      "url": "https://xstreamer.galcom.org:8443/Mosoj-Chaski-RadioOgg",
+      "type": "application/ogg",
+      "icecast": "MosojChaskiOgg"
+    }
+  ]
 }
