@@ -7,9 +7,7 @@ class Player extends React.Component {
     return (
       <div id="wrapper" style={{ backgroundColor: this.props.backgroundColor }}>
         <div id="top">
-          <a href={this.props.website} target="_blank">
-            <img src={this.props.logo} alt="logo" id="logo" />
-          </a>
+          <img src={this.props.logo} alt="logo" id="logo" />
         </div>
         <div id="middle">
           <img
@@ -66,7 +64,7 @@ class Player extends React.Component {
         <div
           id="footer"
           style={{
-            color: this.props.foregroundColor
+            color: this.props.foregroundColor,
           }}
           className="contents"
         >
