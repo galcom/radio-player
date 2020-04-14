@@ -1,19 +1,19 @@
 {
-	"name": "Radio 4VEH",
-	"website": "https://radio4veh.org/",
-	"logo": "logos/4veh.png",
-	"foregroundColor": "#fcfcfc",
-	"backgroundColor": "#1c2228",
-	"streams": [
-		{
-			"url": "http://xstreamer.galcom.org:8000/Radio_4VEH",
-			"type": "audio/mpeg",
-			"icecast": "Radio_4VEH"
-		},
-		{
-			"url": "http://xstreamer.galcom.org:8000/Radio_4VEHOgg",
-			"type": "application/ogg",
-			"icecast": "Radio_4VEHOgg"
-		}
-	]
+  "name": "Radio 4VEH",
+  "website": "https://radio4veh.org/",
+  "logo": "logos/4veh.png",
+  "foregroundColor": "#fcfcfc",
+  "backgroundColor": "#1c2228",
+  "streams": [
+    {
+      "url": "https://xstreamer.galcom.org:8443/Radio_4VEH",
+      "type": "audio/mpeg",
+      "icecast": "Radio_4VEH"
+    },
+    {
+      "url": "https://xstreamer.galcom.org:8443/Radio_4VEHOgg",
+      "type": "application/ogg",
+      "icecast": "Radio_4VEHOgg"
+    }
+  ]
 }

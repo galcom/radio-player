@@ -1,19 +1,19 @@
 {
-	"name": "Lighthouse Radio",
-	"website": "https://www.lighthouseradio.org/",
-	"logo": "logos/lighthouse.png",
-	"foregroundColor": "#fcfcfc",
-	"backgroundColor": "#1c2228",
-	"streams": [
-		{
-			"url": "http://xstreamer.galcom.org:8000/LighthouseRadio",
-			"type": "audio/mpeg",
-			"icecast": "LighthouseRadio"
-		},
-		{
-			"url": "http://xstreamer.galcom.org:8000/LighthouseRadioOgg",
-			"type": "application/ogg",
-			"icecast": "LighthouseRadioOgg"
-		}
-	]
+  "name": "Lighthouse Radio",
+  "website": "https://www.lighthouseradio.org/",
+  "logo": "logos/lighthouse.png",
+  "foregroundColor": "#fcfcfc",
+  "backgroundColor": "#1c2228",
+  "streams": [
+    {
+      "url": "https://xstreamer.galcom.org:8443/LighthouseRadio",
+      "type": "audio/mpeg",
+      "icecast": "LighthouseRadio"
+    },
+    {
+      "url": "https://xstreamer.galcom.org:8443/LighthouseRadioOgg",
+      "type": "application/ogg",
+      "icecast": "LighthouseRadioOgg"
+    }
+  ]
 }

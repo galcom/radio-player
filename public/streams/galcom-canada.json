@@ -1,19 +1,19 @@
 {
-	"name": "Galcom Canada",
-	"website": "https://www.galcom.org/",
-	"logo": "logos/galcom-canada.png",
-	"foregroundColor": "#fcfcfc",
-	"backgroundColor": "#1c2228",
-	"streams": [
-		{
-			"url": "https://xstreamer.galcom.org:8000/GalcomCanada",
-			"type": "audio/mpeg",
-			"icecast": "GalcomCanada"
-		},
-		{
-			"url": "https://xstreamer.galcom.org:8000/GalcomCanadaOgg",
-			"type": "application/ogg",
-			"icecast": "GalcomCanadaOgg"
-		}
-	]
+  "name": "Galcom Canada",
+  "website": "https://www.galcom.org/",
+  "logo": "logos/galcom-canada.png",
+  "foregroundColor": "#fcfcfc",
+  "backgroundColor": "#1c2228",
+  "streams": [
+    {
+      "url": "https://xstreamer.galcom.org:8443/GalcomCanada",
+      "type": "audio/mpeg",
+      "icecast": "GalcomCanada"
+    },
+    {
+      "url": "https://xstreamer.galcom.org:8443/GalcomCanadaOgg",
+      "type": "application/ogg",
+      "icecast": "GalcomCanadaOgg"
+    }
+  ]
 }
