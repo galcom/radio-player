@@ -1,137 +1,148 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body, #root {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 #wrapper {
-    min-height: 100%; 
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
+  min-height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
 }
 
-#top, #middle {
-    display: flex;
-    justify-content: center;
-    text-align: center;
+#top,
+#middle {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 #top {
-    height: 66%;
-    width: 100%;
-    padding-top: 10%;
+  height: 66%;
+  width: 100%;
+  padding-top: 10%;
 }
 
 #middle {
-    /* position: relative; */
-    position: absolute;
-    bottom: 10%;
-    left:25%;
-    width: 50%;
-    /*max-width: 350px;
+  /* position: relative; */
+  position: absolute;
+  bottom: 10%;
+  left: 25%;
+  width: 50%;
+  /*max-width: 350px;
     margin: 0 auto;
     padding:5em 0 2em;*/
 }
 
 #middle img#play {
-    width: 30%;
-    height: auto;
+  width: 30%;
+  height: auto;
 }
 
 #middle img#pause {
-    width: 20%;
-    height: auto;
+  width: 20%;
+  height: auto;
 }
 
 #middle #play,
 #middle #loading,
 #middle #pause {
-    max-width: 130px;
-    max-height: 130px;
+  max-width: 130px;
+  max-height: 130px;
 }
 
 #logo {
-    max-width: 100%;
-    min-width: 100px;
-    height: 100%;
-    padding: 2em;
+  max-width: 100%;
+  min-width: 100px;
+  height: 100%;
+  padding: 2em;
 }
 
 #playpause {
-    max-width: 34%;
-    max-height: 34%;
+  max-width: 34%;
+  max-height: 34%;
 }
 
 #loading {
-    position: absolute;
-    left: 50%;
-    z-index: 10;
-    margin: 0 0 0 -75px;
-    border: 20px solid #1c2228;
-    border-radius: 50%;
-    /* the below value is overridden by Player.js */
-    border-right: 20px solid #fcfcfc;
-    width: 130px;
-    height: 130px;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
+  position: absolute;
+  left: 50%;
+  z-index: 10;
+  margin: 0 0 0 -75px;
+  border: 20px solid #1c2228;
+  border-radius: 50%;
+  /* the below value is overridden by Player.js */
+  border-right: 20px solid #fcfcfc;
+  width: 130px;
+  height: 130px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
 }
 
 #audio-wrapper {
-    display: none;
+  display: none;
 }
 
 #footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    opacity: 0.2;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  opacity: 0.2;
 }
 
 .contents {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .text-contents {
-    align-items: flex-start;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 0.5em 1em;
-    bottom: 0;
-    text-decoration: none;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0.5em 1em;
+  bottom: 0;
+  text-decoration: none;
 }
 
 .text-contents a {
-    color: inherit;
+  color: inherit;
 }
 
 .text-contents a:hover {
-    color: inherit;
+  color: inherit;
 }
 
 .visible {
-    display: inline-block;
+  display: inline-block;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

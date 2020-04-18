@@ -1,86 +1,35 @@
 import React from "react";
 import "./Player.css";
-import FilePlayer from "react-player/lib/players/FilePlayer";
+import Logo from "./Logo";
+import Footer from "./Footer";
+import PlayerControl from "./PlayerControl";
 
 class Player extends React.Component {
   render() {
     return (
       <div id="wrapper" style={{ backgroundColor: this.props.backgroundColor }}>
         <div id="top">
-          <img src={this.props.logo} alt="logo" id="logo" />
+          <Logo logo={this.props.logo} />
         </div>
         <div id="middle">
-          <img
-            id="play"
-            className={this.props.isPlaying ? "hidden" : "visible"}
-            src="./images/play.gif"
-            alt="Play"
-            onClick={() => {
-              this.props.togglePlaying();
-            }}
-          />
-          <div
-            id="loading"
-            style={{ borderRight: "30px solid " + this.props.foregroundColor }}
-            className={
-              this.props.isPlaying && !this.props.isReady ? "visible" : "hidden"
-            }
-            onClick={() => {
-              this.props.togglePlaying();
-            }}
-          />
-          <img
-            id="pause"
-            className={
-              this.props.isPlaying && this.props.isReady ? "visible" : "hidden"
-            }
-            src="./images/pause.gif"
-            alt="Pause"
-            onClick={() => {
-              this.props.togglePlaying();
-            }}
-          />
-          <FilePlayer
-            id="audio-wrapper"
-            url={this.props.streamUrl}
-            playing={this.props.isPlaying}
-            config={{
-              file: {
-                forceAudio: true,
-                autoplay: true
-              }
-            }}
-            onReady={() => {
-              this.props.onReady();
-            }}
-            onBuffer={() => {
-              this.props.onBuffer();
-            }}
-            onError={() => {
-              this.props.onError();
-            }}
+          <PlayerControl
+            streamUrl={this.props.streamUrl}
+            streams={this.props.streams}
+            logo={this.props.logo}
+            foregroundColor={this.props.foregroundColor}
+            // player controls
+            isOnline={this.props.isOnline}
+            isBroadcasting={this.props.isBroadcasting}
+            isPlaying={this.props.isPlaying}
+            isReady={this.props.isReady}
+            onReady={this.props.onReady}
+            onBuffer={this.props.onBuffer}
+            togglePlaying={this.props.togglePlaying}
+            onError={this.props.onError}
           />
         </div>
-        <div
-          id="footer"
-          style={{
-            color: this.props.foregroundColor,
-          }}
-          className="contents"
-        >
-          <span className="text-contents">
-            a{" "}
-            <a href="https://faithtech.com/">
-              <strong>FAITH</strong>TECH
-            </a>{" "}
-            product
-          </span>
-          <span className="text-contents">
-            hosted by{" "}
-            <strong>
-              <a href="http://www.galcom.org/">GALCOM</a>
-            </strong>
-          </span>
+        <div id="footer">
+          <Footer foregroundColor={this.props.foregroundColor} />
         </div>
       </div>
     );
