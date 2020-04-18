@@ -1,12 +1,12 @@
 {
 	"name": "Test",
 	"website": "http://www.galcom.org/",
-	"logo": "logos/default-300.png",
+	"logo": "logos/default.png",
 	"foregroundColor": "#fcfcfc",
 	"backgroundColor": "#1c2228",
 	"streams": [
 		{
-			"url": "totalycorrec",
+			"url": "http://stream.srg-ssr.ch/m/rsp/mp3_128",
 			"type": "audio/mpeg",
 			"icecast": "GalcomCanada"
 		},
