@@ -135,7 +135,7 @@ class Radio extends React.Component {
     setTimeout(function(player) {
       player.setState({logo:player.state.stationLogo});
       console.log("logo reset");
-    }, (3 * 1000), this);
+    }, (5 * 1000), this);
   }
 
   render() {
