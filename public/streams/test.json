@@ -6,7 +6,7 @@
 	"backgroundColor": "#1c2228",
 	"streams": [
 		{
-			"url": "http://stream.srg-ssr.ch/m/rsp/mp3_128",
+			"url": "totalycorrec",
 			"type": "audio/mpeg",
 			"icecast": "GalcomCanada"
 		},
