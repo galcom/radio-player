@@ -66,8 +66,8 @@ class Radio extends React.Component {
         if (config["logo"] === "") {
           config["logo"] = "logos/default.png";
         }
+        config["stationLogo"] = config["logo"];
 
-        config["stationlogo"] = config["logo"];
         config["isOnline"] = isOnline(); // is the device online
         config["isBroadcasting"] = true; // is the radio station broadcasting
         config["isPlaying"] = false; // is the audio playing
@@ -133,7 +133,7 @@ class Radio extends React.Component {
 
     // swap back to the station logo after a few seconds
     setTimeout(function(player) {
-      player.setState({logo:player.state.stationlogo});
+      player.setState({logo:player.state.stationLogo});
       console.log("logo reset");
     }, (3 * 1000), this);
   }
@@ -146,7 +146,7 @@ class Radio extends React.Component {
         streamUrl={this.state.streamUrl}
 
         logo={this.state.logo}
-        stationlogo={this.state.logo}
+        stationLogo={this.state.logo}
         foregroundColor={this.state.foregroundColor}
         backgroundColor={this.state.backgroundColor}
         // player controls
