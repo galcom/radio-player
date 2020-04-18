@@ -115,28 +115,29 @@ class Radio extends React.Component {
       isPlaying: false
     });
 
+    // store the station logo path
     const stationlogo = this.state.logo;
+
     if (isOnline() === false) {
       // internet connection lost
       this.setState({ isOnline: false, logo:"images/nointernet.png" });
-      console.log ("no internet logo displayed")
+      console.log("no internet logo displayed")
 
     } else {
       // the station must not be broadcasting
       console.log("Url " + this.state.streamUrl + " is not broadcasting.");
       this.setState({ isBroadcasting: false, logo:"images/nostream.png" });
-      console.log ("no stream logo displayed")
+      console.log("no stream logo displayed")
 
       // TODO: try swapping stream urls
       // this.setState({ streamUrl: this.state.streams[???]["url"] })
     }
+
+    // swap back to the station logo after a few seconds
     setTimeout(function(player) {
-      player.setState({logo:stationlogo});
-      console.log ("logo reset");
-    }, (3 * 1000),this);
-
-   
-
+      player.setState({ logo: stationlogo });
+      console.log("logo reset");
+    }, (3 * 1000), this);
   }
 
   render() {
