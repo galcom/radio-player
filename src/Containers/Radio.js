@@ -67,6 +67,7 @@ class Radio extends React.Component {
           config["logo"] = "logos/default.png";
         }
 
+        config["stationlogo"] = config["logo"];
         config["isOnline"] = isOnline(); // is the device online
         config["isBroadcasting"] = true; // is the radio station broadcasting
         config["isPlaying"] = false; // is the audio playing
@@ -114,10 +115,7 @@ class Radio extends React.Component {
       isReady: false,
       isPlaying: false
     });
-
-    // store the station logo path
-    const stationlogo = this.state.logo;
-
+    
     if (isOnline() === false) {
       // internet connection lost
       this.setState({ isOnline: false, logo:"images/nointernet.png" });
@@ -135,7 +133,7 @@ class Radio extends React.Component {
 
     // swap back to the station logo after a few seconds
     setTimeout(function(player) {
-      player.setState({ logo: stationlogo });
+      player.setState({logo:player.state.stationlogo});
       console.log("logo reset");
     }, (3 * 1000), this);
   }
@@ -146,8 +144,9 @@ class Radio extends React.Component {
       <Player
         // player settings
         streamUrl={this.state.streamUrl}
-        
+
         logo={this.state.logo}
+        stationlogo={this.state.logo}
         foregroundColor={this.state.foregroundColor}
         backgroundColor={this.state.backgroundColor}
         // player controls
