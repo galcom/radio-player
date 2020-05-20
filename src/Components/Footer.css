@@ -1,0 +1,22 @@
+#footer {
+  opacity: 0.2;
+}
+
+#footer-text-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.text-contents {
+  padding: 0.5em 1em;
+}
+
+.text-contents a {
+  color: inherit;
+}
+
+.text-contents a:hover {
+  color: inherit;
+}
