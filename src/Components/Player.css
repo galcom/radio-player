@@ -35,8 +35,8 @@ body,
 #middle #play,
 #middle #loading,
 #middle #pause {
-  max-width: 130px;
-  max-height: 130px;
+  max-width: 80px;
+  max-height: 80px;
 }
 
 .visible {
