@@ -14,14 +14,29 @@ function PlayerControl(props) {
           props.togglePlaying();
         }}
       />
-      <div
+      {/* If we will use loading-ripple, below comment could be deleted 
+        <div
         id="loading"
         style={{ borderRight: "30px solid " + props.foregroundColor }}
         className={props.isPlaying && !props.isReady ? "visible" : "hidden"}
         onClick={() => {
           props.togglePlaying();
         }}
-      />
+      /> */}
+      <div 
+        id="loading-ripple"
+        className={props.isPlaying && !props.isReady ? "visible" : "hidden"}
+        onClick={() => {
+          props.togglePlaying();
+        }}
+      >
+        <div
+          style={{ border: "6px solid " + props.foregroundColor }}
+         />
+        <div
+          style={{ border: "6px solid " + props.foregroundColor }}
+         />
+      </div>
       <img
         id="pause"
         className={props.isPlaying && props.isReady ? "visible" : "hidden"}

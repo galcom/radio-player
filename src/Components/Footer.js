@@ -5,6 +5,7 @@ function Footer(props) {
   return (
     <React.Fragment>
       <div
+        id="footer-text-wrapper"
         style={{
           color: props.foregroundColor,
         }}

@@ -1,0 +1,77 @@
+#audio-wrapper {
+  display: none;
+}
+
+#loading-ripple {
+  position: relative;
+  width: 130px;
+  height: 130px;
+}
+
+#loading-ripple div {
+  position: absolute;
+  /* the below value is overridden by PlayerControl.js */
+  border: 6px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+#loading-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+
+@keyframes lds-ripple {
+  0% {
+    top: 60px;
+    left: 60px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 120px;
+    height: 120px;
+    opacity: 0;
+  }
+}
+
+
+
+/* 
+ If we will use loading-ripple, all below could be deleted 
+ */
+#loading {
+  position: absolute;
+  left: 50%;
+  z-index: 10;
+  margin: 0 0 0 -75px;
+  border: 20px solid #1c2228;
+  border-radius: 50%;
+  /* the below value is overridden by Player.js */
+  border-right: 20px solid #fcfcfc;
+  width: 130px;
+  height: 130px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
