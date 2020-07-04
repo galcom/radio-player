@@ -1,7 +1,7 @@
 {
   "name": "Emmanuel Bible College Radio",
   "website": "https://www.emmanuelbiblecollege.ca/",
-  "logo": "logos/ebc.png",
+  "logo": "stations/ebc/ebc.png",
   "foregroundColor": "#fcfcfc",
   "backgroundColor": "#1c2228",
   "streams": [
