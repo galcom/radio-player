@@ -58,9 +58,11 @@ class Radio extends React.Component {
   componentDidMount() {
     const values = queryString.parse(this.props.location.search);
 
-    fetch(`${process.env.PUBLIC_URL}/streams/${values.station}.json`)
-      .then(j => j.json())
-      .then(config => {
+    fetch(
+      `${process.env.PUBLIC_URL}/stations/${values.station}/${values.station}.json`
+    )
+      .then((j) => j.json())
+      .then((config) => {
         document.title = config["name"];
         config["streamUrl"] = chooseStreamUrl(config["streams"]);
         if (config["logo"] === "") {
@@ -91,7 +93,7 @@ class Radio extends React.Component {
     console.log("Stream is ready to play.");
     this.setState({
       isReady: true,
-      isBroadcasting: true
+      isBroadcasting: true,
     });
   }
 
@@ -113,29 +115,32 @@ class Radio extends React.Component {
     // update isReady and isPlaying, to be safe (should already be false)
     this.setState({
       isReady: false,
-      isPlaying: false
+      isPlaying: false,
     });
-    
+
     if (isOnline() === false) {
       // internet connection lost
-      this.setState({ isOnline: false, logo:"images/nointernet.png" });
-      console.log("no internet logo displayed")
-
+      this.setState({ isOnline: false, logo: "images/nointernet.png" });
+      console.log("no internet logo displayed");
     } else {
       // the station must not be broadcasting
       console.log("Url " + this.state.streamUrl + " is not broadcasting.");
-      this.setState({ isBroadcasting: false, logo:"images/nostream.png" });
-      console.log("no stream logo displayed")
+      this.setState({ isBroadcasting: false, logo: "images/nostream.png" });
+      console.log("no stream logo displayed");
 
       // TODO: try swapping stream urls
       // this.setState({ streamUrl: this.state.streams[???]["url"] })
     }
 
     // swap back to the station logo after a few seconds
-    setTimeout(function(player) {
-      player.setState({logo:player.state.stationLogo});
-      console.log("logo reset");
-    }, (5 * 1000), this);
+    setTimeout(
+      function (player) {
+        player.setState({ logo: player.state.stationLogo });
+        console.log("logo reset");
+      },
+      5 * 1000,
+      this
+    );
   }
 
   render() {
@@ -144,7 +149,6 @@ class Radio extends React.Component {
       <Player
         // player settings
         streamUrl={this.state.streamUrl}
-
         logo={this.state.logo}
         stationLogo={this.state.logo}
         foregroundColor={this.state.foregroundColor}

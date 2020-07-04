@@ -39,7 +39,7 @@
         const station = params.get("station");
         document.querySelector(
           'link[rel="manifest"]'
-        ).href = `manifests/${station}-manifest.json`;
+        ).href = `stations/${station}/manifest.json`;
       }, 100);
 
       if ("serviceWorker" in navigator) {
