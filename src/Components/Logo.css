@@ -1,3 +1,5 @@
 #logo {
   padding: 2em;
+  width: 40%;
+  max-width: 500px;
 }

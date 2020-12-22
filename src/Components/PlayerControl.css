@@ -52,8 +52,9 @@
   border-radius: 50%;
   /* the below value is overridden by Player.js */
   border-right: 20px solid #fcfcfc;
-  width: 130px;
-  height: 130px;
+  width: 20%;
+  max-width: 130px;
+  max-height: 130px; 
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }
