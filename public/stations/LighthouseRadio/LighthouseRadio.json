@@ -1,7 +1,7 @@
 {
   "name": "Lighthouse Radio",
   "website": "https://www.lighthouseradio.org/",
-  "logo": "stations/lighthouse/lighthouse.png",
+  "logo": "stations/LighthouseRadio/LighthouseRadio.png",
   "foregroundColor": "#fcfcfc",
   "backgroundColor": "#1c2228",
   "streams": [

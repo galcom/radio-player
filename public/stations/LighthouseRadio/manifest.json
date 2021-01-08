@@ -1,6 +1,6 @@
 {
-  "short_name": "Radio 4VEH",
-  "name": "La Voix Évangélique d’Haiti",
+  "short_name": "Radio",
+  "name": "A FaithTech Radio project.",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/?station=4veh",
+  "start_url": "/?station=LighthouseRadio",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
