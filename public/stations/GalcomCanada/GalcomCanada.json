@@ -1,7 +1,7 @@
 {
   "name": "Galcom Canada",
   "website": "https://www.galcom.org/",
-  "logo": "stations/galcom-canada/galcom-canada.png",
+  "logo": "stations/GalcomCanada/GalcomCanada.png",
   "foregroundColor": "#fcfcfc",
   "backgroundColor": "#1c2228",
   "streams": [

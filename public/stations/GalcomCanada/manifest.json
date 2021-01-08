@@ -1,6 +1,6 @@
 {
-  "short_name": "Radio",
-  "name": "A FaithTech Radio project.",
+  "short_name": "Galcom Canada",
+  "name": "A test stream from Galcom",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/?station=vision-africa",
+  "start_url": "/?station=GalcomCanada",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
