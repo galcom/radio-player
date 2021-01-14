@@ -1,0 +1,13 @@
+{
+  "name": "MixCrisRadio",
+  "logo": "/android-chrome-192x192.png",
+  "foregroundColor": "#fcfcfc",
+  "backgroundColor": "#1c2228",
+  "streams": [
+    {
+      "url": "https://xstreamer.galcom.org:8443/MixCrisRadio",
+      "type": "audio/mpeg",
+      "icecast": "GalcomCanada"
+    }
+  ]
+}
