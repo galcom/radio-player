@@ -1,6 +1,6 @@
 {
   "name": "MixCrisRadio",
-  "logo": "/android-chrome-192x192.png",
+  "logo": "stations/MixCrisRadio/MixCrisRadio.png",
   "foregroundColor": "#fcfcfc",
   "backgroundColor": "#1c2228",
   "streams": [
