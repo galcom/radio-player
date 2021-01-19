@@ -1,0 +1,13 @@
+{
+  "name": "Grace-for-the-Journey-Radio",
+  "logo": "stations/Grace-for-the-Journey-Radio/GraceJourney-logo-300.png",
+  "foregroundColor": "#fcfcfc",
+  "backgroundColor": "#1c2228",
+  "streams": [
+    {
+      "url": "https://xstreamer.galcom.org:8443/Grace-for-the-Journey-Radio",
+      "type": "audio/mpeg",
+      "icecast": "Grace-for-the-Journey-Radio"
+    }
+  ]
+}
