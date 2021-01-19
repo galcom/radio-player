@@ -94,6 +94,7 @@ class Radio extends React.Component {
     this.setState({
       isReady: true,
       isBroadcasting: true,
+		isPlaying:true,
     });
   }
 
@@ -114,7 +115,7 @@ class Radio extends React.Component {
 
     // update isReady and isPlaying, to be safe (should already be false)
     this.setState({
-      isReady: false,
+      //isReady: false,
       isPlaying: false,
     });
 
