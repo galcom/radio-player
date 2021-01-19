@@ -37,6 +37,7 @@ body,
 #middle #pause {
   max-width: 130px;
   max-height: 130px;
+  width: 40%;
 }
 
 .visible {
