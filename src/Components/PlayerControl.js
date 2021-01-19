@@ -5,9 +5,10 @@ import FilePlayer from "react-player/lib/players/FilePlayer";
 function PlayerControl(props) {
   return (
     <React.Fragment>
+	   <div> {props.streamUrl == null ? "No station given or station not found" :""} </div>
       <img
         id="play"
-        className={props.isPlaying ? "hidden" : "visible"}
+        className={props.streamUrl == null || props.isPlaying ? "hidden" : "visible"}
         src="./images/play.gif"
         alt="Play"
         onClick={() => {
