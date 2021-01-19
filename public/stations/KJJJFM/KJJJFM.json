@@ -1,0 +1,13 @@
+{
+  "name": "KJJJFM",
+  "logo": "stations/KJJJFM/Galcon-KJJJ-v16a-Final.jpg",
+  "foregroundColor": "#fcfcfc",
+  "backgroundColor": "#1c2228",
+  "streams": [
+    {
+      "url": "https://xstreamer.galcom.org:8443/KJJJFM",
+      "type": "audio/mpeg",
+      "icecast": "KJJJFM"
+    }
+  ]
+}
