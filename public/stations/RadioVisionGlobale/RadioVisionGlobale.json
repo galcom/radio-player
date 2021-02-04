@@ -1,0 +1,13 @@
+{
+  "name": "RadioVisionGlobale",
+  "logo": "stations/RadioVisionGlobale/RVGlogo4streamer.png",
+  "foregroundColor": "#fcfcfc",
+  "backgroundColor": "#1c2228",
+  "streams": [
+    {
+      "url": "https://xstreamer.galcom.org:8443/RadioVisionGlobale",
+      "type": "audio/mpeg",
+      "icecast": "RadioVisionGlobale"
+    }
+  ]
+}

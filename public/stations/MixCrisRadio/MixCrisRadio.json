@@ -7,7 +7,7 @@
     {
       "url": "https://xstreamer.galcom.org:8443/MixCrisRadio",
       "type": "audio/mpeg",
-      "icecast": "GalcomCanada"
+      "icecast": "MixCrisRadio"
     }
   ]
 }

@@ -76,7 +76,22 @@ class Radio extends React.Component {
         config["isReady"] = false; // is the Player ready to play
 
         this.setState(config);
-      });
+      })
+	  .catch((error)=>{
+		  var config={};
+		  console.log("No station name given, or config file not found for station");
+		  document.title = "No Station";
+		  config["logo"] = "logos/default.png";
+        config["stationLogo"] = config["logo"];
+
+        config["isOnline"] = isOnline(); // is the device online
+        config["isBroadcasting"] = false; // is the radio station broadcasting
+        config["isPlaying"] = false; // is the audio playing
+        config["isReady"] = false; // is the Player ready to play
+
+        this.setState(config);
+
+	  });
   }
 
   onBuffer() {
