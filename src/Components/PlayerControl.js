@@ -63,9 +63,8 @@ function PlayerControl(props) {
         onBuffer={() => {
           props.onBuffer();
         }}
-        onError={() => {
-          props.onError();
-        }}
+        onError={props.onError}
+        //onError={(error) => { props.onError(error); }}
       />
     </React.Fragment>
   );

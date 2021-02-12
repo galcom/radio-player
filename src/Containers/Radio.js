@@ -109,6 +109,7 @@ class Radio extends React.Component {
     this.setState({
       isReady: true,
       isBroadcasting: true,
+		  isPlaying:true,
     });
   }
 
@@ -124,19 +125,24 @@ class Radio extends React.Component {
     }
   }
 
-  onError() {
-    console.log("Error playing " + this.state.streamUrl + ".");
+  onError(error) {
+    console.log("Error playing " + this.state.streamUrl + ". "+error);
 
     // update isReady and isPlaying, to be safe (should already be false)
     this.setState({
-      isReady: false,
+      //isReady: false,
       isPlaying: false,
     });
+
 
     if (isOnline() === false) {
       // internet connection lost
       this.setState({ isOnline: false, logo: "images/nointernet.png" });
       console.log("no internet logo displayed");
+    } else if(/NotAllowedError/.test(error)  ){
+      //error is only caused by blocked attempt to autoplay, not a real error though
+      console.log("failed to autoplay, user needs to interact with page first");
+      return;
     } else {
       // the station must not be broadcasting
       console.log("Url " + this.state.streamUrl + " is not broadcasting.");
